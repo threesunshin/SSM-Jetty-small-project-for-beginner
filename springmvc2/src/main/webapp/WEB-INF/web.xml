@@ -10,6 +10,7 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <!-- 读取spring配置文件 -->
+  <!-- 指定Spring Bean的配置文件所在目录。默认配置在WEB-INF目录下 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:conf/spring.xml;
@@ -65,11 +66,15 @@
     <servlet-name>spring</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
+      <!--SpringMVC配置参数文件的位置 -->
       <param-name>contextConfigLocation</param-name>
+      <!--默认名称为ServletName-servlet.xml -->
       <param-value>classpath:conf/spring-mvc.xml</param-value>
     </init-param>
+    <!-- 启动顺序，数字越小，启动越早 -->
     <load-on-startup>2</load-on-startup>
   </servlet>
+  <!--所有请求都会被springmvc拦截 -->
   <servlet-mapping>
     <servlet-name>spring</servlet-name>
     <url-pattern>/</url-pattern>

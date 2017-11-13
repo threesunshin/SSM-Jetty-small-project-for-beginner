@@ -16,6 +16,9 @@
     <!-- 扫描controller（controller层注入） -->
     <context:component-scan base-package="cn.springmvc.controller"/>
 
+
+    <!-- 支持mvc注解驱动 -->
+    <!--输出json格式数据, 输出json和输出jsp只能选一个-->
     <mvc:annotation-driven>
         <mvc:message-converters>
             <ref bean="jacksonMessageConverter" />

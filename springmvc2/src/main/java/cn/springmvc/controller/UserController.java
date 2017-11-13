@@ -19,10 +19,19 @@ public class UserController {
     @Autowired //自动装配
     private UserService userService;
 
+//    @ResponseBody //接收Json对象字符串
+//    @RequestMapping("index")
+//    public User index(@RequestParam(name = "id")int id){
+//
+//        return userService.selectUserById(id);
+//
+//    }
+
     @ResponseBody //接收Json对象字符串
     @RequestMapping("index")
-    public User index(@RequestParam(name = "id")int id){
-        return userService.selectUserById(id);
-    }
+    public String index(){
 
+        return "index";
+
+    }
 }
